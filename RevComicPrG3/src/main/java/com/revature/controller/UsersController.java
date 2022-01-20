@@ -12,22 +12,7 @@ public class UsersController {
 	
 	UserService us = new UserService();
 	
-	public Handler getUsersHandler = (ctx) -> {
-		if(ctx.req.getSession(true) !=null) {
-			List<User> allUsers = us.getUsers();
-			
-			Gson gson = new Gson();
-			
-			String JSONUsers = gson.toJson(allUsers);
-			
-			ctx.result(JSONUsers);
-			ctx.status(200);
-			
-		} else {
-			ctx.result("Oh no you failed to get the users!!!");
-			ctx.status(404);
-		}
-	};
+
 
 	public Handler insertUserHandler = (ctx) ->{
 		if(ctx.req.getSession(true) !=null) {
@@ -54,7 +39,7 @@ public class UsersController {
 			
 			int users_id = Integer.parseInt(ctx.pathParam("users_id"));
 			
-			List<User> UsersById = us.getUserById(users_id);
+			User UsersById = us.getUserById(users_id);
 			
 			Gson gson = new Gson();
 			

@@ -40,7 +40,6 @@ public class Driver {
 					).start(3000);
 		    	
 		    	app.post("/login", ac.loginHandler);
-				app.get("/user",  usc.getUsersHandler);
 				app.post("/user", usc.insertUserHandler);
 				app.get("/user/{users_id}", usc.getUsersByIdHandler);
 				app.put("/user/{users_id}", usc.updateUsersHandler);

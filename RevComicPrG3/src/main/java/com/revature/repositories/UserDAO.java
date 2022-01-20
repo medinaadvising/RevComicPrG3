@@ -1,6 +1,10 @@
 package com.revature.repositories;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+
 import com.revature.models.User;
 import com.revature.utils.HibernateUtil;
 
@@ -15,23 +19,32 @@ public void insertUser(User user) {
 	HibernateUtil.closeSession();
 	}
 	
-public void updateUser(User user) {
+public User updateUser(User user) {
 		
 	Session ses = HibernateUtil.getSession();
+	
+	Transaction tran = ses.beginTransaction();
 		
 	ses.merge(user);
+	
+	tran.commit();
 		
 	HibernateUtil.closeSession();
+	
+	return user;
+	
 		
 	}
 
-public void getUserById(int id) {
+public User getUserById(int id) {
 	
 	Session ses = HibernateUtil.getSession();
 	
-	ses.save(id);
+	User userbyid = ses.get(User.class, id);
 	
 	HibernateUtil.closeSession();
+	
+	return userbyid;
 	
 }
 
