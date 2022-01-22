@@ -24,6 +24,15 @@
 
         <!-- We will map our classes here -->
         <mapping class="com.revature.models.User"/>
+        <mapping class="com.revature.models.Transactions"/>
+        <mapping class="com.revature.models.UserRoles"/>
+        <mapping class="com.revature.models.Status"/>
+        <mapping class="com.revature.models.PromoTypes"/>
+        <mapping class="com.revature.models.PaymentType"/>
+        <mapping class="com.revature.models.Items"/>
+        <mapping class="com.revature.models.Genres"/>
+        <mapping class="com.revature.models.Creators"/>
+        <mapping class="com.revature.models.Characters"/>
         
 
      </session-factory>

@@ -22,11 +22,11 @@ public class Driver {
 		    	TransactionsController tc = new TransactionsController();
 		    	AuthController ac = new AuthController();
 		    	
-				/*
-				 * try(Session ses = HibernateUtil.getSession()) {
-				 * System.out.println("Connection Successful"); } catch (HibernateException e) {
-				 * System.out.println("Connection Failed!"); e.printStackTrace(); }
-				 */
+				
+				 try(Session ses = HibernateUtil.getSession()) {
+				 System.out.println("Connection Successful"); } catch (HibernateException e) {
+				 System.out.println("Connection Failed!"); e.printStackTrace(); }
+				 
 		    	
 		   
 		    	

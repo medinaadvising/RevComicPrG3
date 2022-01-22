@@ -80,7 +80,7 @@ TransactionsService ts = new TransactionsService();
 			
 			int trans_user = Integer.parseInt(ctx.pathParam("trans_user"));
 			
-			List<Transactions> TransById = ts.getTransactionsById(trans_user);
+			List<Transactions> TransById = ts.getTransactions();
 			
 			Gson gson = new Gson();
 			
