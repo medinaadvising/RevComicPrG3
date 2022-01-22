@@ -23,9 +23,11 @@ public class Driver {
 		    	AuthController ac = new AuthController();
 		    	
 				
-				 try(Session ses = HibernateUtil.getSession()) {
-				 System.out.println("Connection Successful"); } catch (HibernateException e) {
-				 System.out.println("Connection Failed!"); e.printStackTrace(); }
+				/*
+				 * try(Session ses = HibernateUtil.getSession()) {
+				 * System.out.println("Connection Successful"); } catch (HibernateException e) {
+				 * System.out.println("Connection Failed!"); e.printStackTrace(); }
+				 */
 				 
 		    	
 		   
@@ -37,6 +39,7 @@ public class Driver {
 					).start(3000);
 		    	
 		    	app.post("/login", ac.loginHandler);
+		    	app.get("/user",  usc.getUsersHandler);
 				app.post("/user", usc.insertUserHandler);
 				app.get("/user/{users_id}", usc.getUsersByIdHandler);
 				app.put("/user/{users_id}", usc.updateUsersHandler);

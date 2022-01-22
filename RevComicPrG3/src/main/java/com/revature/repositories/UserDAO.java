@@ -1,5 +1,7 @@
 package com.revature.repositories;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -8,41 +10,58 @@ import com.revature.utils.HibernateUtil;
 
 public class UserDAO {
 	
-public void insertUser(User user) {
+	public List<User> getAllUsers(){
 		
-	Session ses = HibernateUtil.getSession();
+		//open a Session object
+		Session ses = HibernateUtil.getSession();
 		
-	ses.save(user);
+		//SELECT all movies, with HQL instead of session methods, and put the values into a List (this will be one line)
+		List<User> userList = ses.createQuery("FROM User").list();
 		
-	HibernateUtil.closeSession();
+		//close the session
+		HibernateUtil.closeSession();
+		
+		//return the List of Movies
+		
+		return userList; 
+		
 	}
 	
-public User updateUser(User user) {
+	public void insertUser(User user) {
 		
-	Session ses = HibernateUtil.getSession();
-	
-	Transaction tran = ses.beginTransaction();
+		Session ses = HibernateUtil.getSession();
 		
-	ses.merge(user);
-	
-	tran.commit();
+		ses.save(user);
 		
-	HibernateUtil.closeSession();
+		HibernateUtil.closeSession();
+	}
 	
-	return user;
+	public User updateUser(User user) {
+		
+		Session ses = HibernateUtil.getSession();
+	
+		Transaction tran = ses.beginTransaction();
+		
+		ses.merge(user);
+	
+		tran.commit();
+		
+		HibernateUtil.closeSession();
+	
+		return user;
 	
 		
 	}
 
-public User getUserById(int id) {
+	public User getUserById(int id) {
 	
-	Session ses = HibernateUtil.getSession();
+		Session ses = HibernateUtil.getSession();
 	
-	User userbyid = ses.get(User.class, id);
+		User userbyid = ses.get(User.class, id);
 	
-	HibernateUtil.closeSession();
+		HibernateUtil.closeSession();
 	
-	return userbyid;
+		return userbyid;
 	
 }
 

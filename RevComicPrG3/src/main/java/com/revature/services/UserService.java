@@ -7,7 +7,14 @@ import com.revature.repositories.UserDAO;
 
 public class UserService {
 	
-	UserDAO eDAO = new UserDAO(); //so that I can use the methods from the EmployeeDAO
+	UserDAO eDAO = new UserDAO(); 
+	
+	public List<User> getUsers() {
+		
+	List<User> users = eDAO.getAllUsers();
+	
+	return users;
+	}
 
 	public void addUser(User newUser) {
 		

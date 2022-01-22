@@ -13,7 +13,23 @@ public class UsersController {
 	UserService us = new UserService();
 	
 
-
+	public Handler getUsersHandler = (ctx) -> {
+		if(ctx.req.getSession(true) !=null) {
+			List<User> allUsers = us.getUsers();
+			
+			Gson gson = new Gson();
+			
+			String JSONUsers = gson.toJson(allUsers);
+			
+			ctx.result(JSONUsers);
+			ctx.status(200);
+			
+		} else {
+			ctx.result("Oh no you failed to get the users!!!");
+			ctx.status(404);
+		}
+	};
+	
 	public Handler insertUserHandler = (ctx) ->{
 		if(ctx.req.getSession(true) !=null) {
 			
