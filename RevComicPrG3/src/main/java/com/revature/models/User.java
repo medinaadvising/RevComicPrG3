@@ -22,8 +22,13 @@ public class User {
 	
 	
 	
-	public User() {
+	public User(String username, String password, String f_name, String l_name, String user_email) {
 		super();
+		this.username = username;
+		this.password = password;
+		this.f_name = f_name;
+		this.l_name = l_name;
+		this.user_email = user_email;
 		
 	}
 
@@ -39,6 +44,16 @@ public class User {
 		this.f_name = f_name;
 		this.l_name = l_name;
 		this.user_email = user_email;
+	}
+
+
+	
+
+
+	@Override
+	public String toString() {
+		return "User [users_id=" + users_id + ", username=" + username + ", password=" + password + ", f_name=" + f_name
+				+ ", l_name=" + l_name + ", user_email=" + user_email + "]";
 	}
 
 

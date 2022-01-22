@@ -1,7 +1,5 @@
 package com.revature.repositories;
 
-import javax.persistence.Query;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

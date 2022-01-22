@@ -6,8 +6,9 @@ import org.hibernate.Session;
 import com.revature.utils.HibernateUtil;
 
 import com.revature.controller.AuthController;
+import com.revature.controller.TransactionsController;
 import com.revature.controller.UsersController;
-
+import com.revature.repositories.UserDAO;
 
 import io.javalin.Javalin;
 
@@ -16,22 +17,18 @@ public class Driver {
 	public static void main(String[] args) {
 		
 		
-		    	
+	
 		    	UsersController usc = new UsersController();
-		    	
+		    	TransactionsController tc = new TransactionsController();
 		    	AuthController ac = new AuthController();
 		    	
-		    	try(Session ses = HibernateUtil.getSession()) {
-					System.out.println("Connection Successful");
-				} catch (HibernateException e) {
-					System.out.println("Connection Failed!");
-					e.printStackTrace();
-				}
+				/*
+				 * try(Session ses = HibernateUtil.getSession()) {
+				 * System.out.println("Connection Successful"); } catch (HibernateException e) {
+				 * System.out.println("Connection Failed!"); e.printStackTrace(); }
+				 */
 		    	
-		    	
-		    	//Menu menu = new Menu();
-		    	
-		    	//menu.displayMenu();
+		   
 		    	
 		    	Javalin app = Javalin.create(
 						config -> {
@@ -45,7 +42,10 @@ public class Driver {
 				app.put("/user/{users_id}", usc.updateUsersHandler);
 				
 				//this can be where we add the marvel api functionality
-				
+				app.get("/transaction",  tc.getTransactionsHandler);
+				app.post("/transaction", tc.insertTransactionsHandler);
+				app.get("/transaction/{trans_user}", tc.getTransactionsByIdHandler);
+				app.put("/transaction/{trans_id}", tc.updateTransactionsHandler);
 				
 			}
 
