@@ -23,6 +23,7 @@ public class ItemDAO {
 		
 		Session ses = EcommerceUtil.getSession();
 		
+		@SuppressWarnings("unchecked")
 		List<Item> itemList = ses.createQuery("FROM Item").list();
 		
 		EcommerceUtil.closeSession();

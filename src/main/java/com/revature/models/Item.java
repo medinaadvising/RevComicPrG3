@@ -52,7 +52,7 @@ public class Item {
 
 
 	public Item(String title, String description, int creator_id, int genre_id, int character_id, int promo_type_id,
-			Creator creator, Genre genre, Character character, Promo_Type promo_ype) {
+			Creator creator, Genre genre, Character character, Promo_Type promo_type) {
 		super();
 		this.title = title;
 		this.description = description;

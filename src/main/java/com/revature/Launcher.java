@@ -5,7 +5,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import com.revature.models.Customer;
 import com.revature.models.Inventory;
+import com.revature.models.Item;
 import com.revature.repositories.InventoryDAO;
+import com.revature.repositories.ItemDAO;
 import com.revature.utils.EcommerceUtil;
 
 
@@ -13,7 +15,8 @@ public class Launcher {
 
 	public static void main(String[] args) {
 		
-		InventoryDAO iDAO = new InventoryDAO();
+	//	InventoryDAO iDAO = new InventoryDAO();
+		ItemDAO iDAO = new ItemDAO();
 		
 		//This try with resources is good for checking that your DB is connected
 		//But we should comment it out once we know we're connected, because it will close the Session
@@ -35,17 +38,45 @@ public class Launcher {
 	//	Inventory i2 = new Inventory("Arkham City", "Dan Watters", "01-18-2022", 28, c2);
 	//	Inventory i3 = new Inventory("Inferno", "Jonathan Hickman", "01-20-2022", 26, c3);
 		
-		Item i1 = new Item("Devil’S Reign: Villains for Hire", "NEW YORK CITY is on a razor's edge, and there's only one force fighting for the rule of law in the chaos: Wilson Fisk's THUNDERBOLTS!", 1001, 1, c1);
-		Item i2 = new Item("Arkham City", "Dan Watters", "01-18-2022", 28, c2);
-		Item i3 = new Item("Inferno", "Jonathan Hickman", "01-20-2022", 26, c3);
+		Item i1 = new Item("Devil’S Reign: Villains for Hire", "NEW YORK CITY is on a razor's edge, and there's only one force fighting for the rule of law in the chaos: Wilson Fisk's THUNDERBOLTS!", 1, 1, 1, 1, cr1, g1, ch1, p1);
+		Item i2 = new Item("Star Wars: Doctor Aphra", "CONJURATIONS With STRANGE RITUAL MURDERS on the rise, DOCTOR APHRA and SANA STARROS' hunt for HOWLING ARTIFACTS is growing dire! Their leads keep turning up dead, and they're running out of time! They'll have to delve deep into the secrets of an ANCIENT TECH CULT if they plan to catch the killer!", 2, 2, 2, 2, cr2, g2, ch2, p2);
+		Item i3 = new Item("Silk", "SILK IS BACK! Cindy Moon returns as the web-spinning Spider-Hero SILK in an all-new, all-star series! As Silk gains popularity in the public eye, Cindy is questioning her place in the world. But existentialism will have to wait when a powerful new villain is turned loose! In a race against the clock, Silk discovers the dangers of ancient Korean magic - and social media. Don't miss the comics debut of stunning storyteller EMILY KIM and the return of legendary comic artist TAKESHI MIYAZAWA", 3, 3, 3, 3, cr3, g3, ch3, p3);
 		
-		iDAO.insertInventory(i1);
-		iDAO.insertInventory(i2);
-		iDAO.insertInventory(i3);
+	//	iDAO.insertInventory(i1);
+	//	iDAO.insertInventory(i2);
+	//	iDAO.insertInventory(i3);
 		
-		List<Inventory> allInventories = iDAO.getAllInventories();
 		
-		for(Inventory i : allInventories) {
+		iDAO.insertItem(i1);
+		iDAO.insertItem(i2);
+		iDAO.insertItem(i3);
+		
+	//	List<Inventory> allInventories = iDAO.getAllInventories();
+		List<Item> allItems = iDAO.getAllItems();
+		
+		for(Item i : allItems) {
+			System.out.println(i);
+		}
+		
+		System.out.println(iDAO.getItemById(2));
+		
+		System.out.println(iDAO.getItemsByCreatorId(1));
+		
+		System.out.println(iDAO.getItemsByGenreId(1));
+		
+		System.out.println(iDAO.getItemsByCharacterId(1));
+		
+		System.out.println(iDAO.getItemsByPromo_TypeId(1));
+
+		i1.setTitle("SOMETHING ELSE");
+		
+		iDAO.UpdateItemWithSessionMethod(i1);
+		
+		System.out.println(iDAO.getItemById(1));
+		
+	}
+		
+	/*	for(Inventory i : allInventories) {
 			System.out.println(i);
 		}
 		
@@ -60,5 +91,5 @@ public class Launcher {
 		System.out.println(iDAO.getInventoryById(1));
 		
 	}
-
+*/
 }
