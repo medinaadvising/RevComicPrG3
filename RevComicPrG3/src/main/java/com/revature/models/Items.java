@@ -21,11 +21,11 @@ public class Items {
 	private int item_id;
 	private String title;
 	private String description;
-	private String title_link;
-	private String image_link;
-	private Blob cover_image;  // java.sql
+	private String comic_link;
+	private String creatorName;
+	private String characterName;
 	private int year_published;
-	private int num_of_pages;
+	private double price;
 	private int qty_at_seller;
 	
 	//One to Many (technically many to one) relationship with Director - one Director can have many movies 
@@ -62,160 +62,227 @@ public class Items {
 												  //the name attribute must equal the name of the id of Director in the DB
 	//@Column(name = "director_id_fk") //gonna see if this works...
 	public PromoTypes promotype;  
-	//original DB table name: promo_types. See Java class PromoTypes
+	//original DB table name: promo_types. See Java class PromoType
+	
+	
 
 	@Override
 	public String toString() {
-		return "Items [item_id=" + item_id + ", title=" + title + ", description=" + description + ", title_link="
-				+ title_link + ", image_link=" + image_link + ", cover_image=" + cover_image + ", year_published="
-				+ year_published + ", num_of_pages=" + num_of_pages + ", qty_at_seller=" + qty_at_seller
-				+ ", promotype=" + promotype + "]";
+		return "Items [item_id=" + item_id + ", title=" + title + ", description=" + description + ", comic_link="
+				+ comic_link + ", creatorName=" + creatorName + ", characterName=" + characterName + ", year_published="
+				+ year_published + ", price=" + price + ", qty_at_seller=" + qty_at_seller + ", creator=" + creator
+				+ ", genre=" + genre + ", character=" + character + ", promotype=" + promotype + "]";
 	}
+
+
 
 	public Items() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Items(int item_id, String title, String description, String title_link, String image_link, Blob cover_image,
-			int year_published, int num_of_pages, int qty_at_seller, Creators creator, Genres genre,
+
+
+	public Items(int item_id, String title, String description, String comic_link, String creatorName,
+			String characterName, int year_published, double price, int qty_at_seller, Creators creator, Genres genre,
 			Characters character, PromoTypes promotype) {
 		super();
 		this.item_id = item_id;
 		this.title = title;
 		this.description = description;
-		this.title_link = title_link;
-		this.image_link = image_link;
-		this.cover_image = cover_image;
+		this.comic_link = comic_link;
+		this.creatorName = creatorName;
+		this.characterName = characterName;
 		this.year_published = year_published;
-		this.num_of_pages = num_of_pages;
+		this.price = price;
 		this.qty_at_seller = qty_at_seller;
 		this.creator = creator;
 		this.genre = genre;
 		this.character = character;
 		this.promotype = promotype;
 	}
+
+
 
 	public int getItem_id() {
 		return item_id;
 	}
 
+
+
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}
+
+
 
 	public String getTitle() {
 		return title;
 	}
 
+
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+
 
 	public String getDescription() {
 		return description;
 	}
 
+
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getTitle_link() {
-		return title_link;
+
+
+	public String getComic_link() {
+		return comic_link;
 	}
 
-	public void setTitle_link(String title_link) {
-		this.title_link = title_link;
+
+
+	public void setComic_link(String comic_link) {
+		this.comic_link = comic_link;
 	}
 
-	public String getImage_link() {
-		return image_link;
+
+
+	public String getCreatorName() {
+		return creatorName;
 	}
 
-	public void setImage_link(String image_link) {
-		this.image_link = image_link;
+
+
+	public void setCreatorName(String creatorName) {
+		this.creatorName = creatorName;
 	}
 
-	public Blob getCover_image() {
-		return cover_image;
+
+
+	public String getCharacterName() {
+		return characterName;
 	}
 
-	public void setCover_image(Blob cover_image) {
-		this.cover_image = cover_image;
+
+
+	public void setCharacterName(String characterName) {
+		this.characterName = characterName;
 	}
+
+
 
 	public int getYear_published() {
 		return year_published;
 	}
 
+
+
 	public void setYear_published(int year_published) {
 		this.year_published = year_published;
 	}
 
-	public int getNum_of_pages() {
-		return num_of_pages;
+
+
+	public double getPrice() {
+		return price;
 	}
 
-	public void setNum_of_pages(int num_of_pages) {
-		this.num_of_pages = num_of_pages;
+
+
+	public void setPrice(double price) {
+		this.price = price;
 	}
+
+
 
 	public int getQty_at_seller() {
 		return qty_at_seller;
 	}
 
+
+
 	public void setQty_at_seller(int qty_at_seller) {
 		this.qty_at_seller = qty_at_seller;
 	}
+
+
 
 	public Creators getCreator() {
 		return creator;
 	}
 
+
+
 	public void setCreator(Creators creator) {
 		this.creator = creator;
 	}
+
+
 
 	public Genres getGenre() {
 		return genre;
 	}
 
+
+
 	public void setGenre(Genres genre) {
 		this.genre = genre;
 	}
+
+
 
 	public Characters getCharacter() {
 		return character;
 	}
 
+
+
 	public void setCharacter(Characters character) {
 		this.character = character;
 	}
+
+
 
 	public PromoTypes getPromotype() {
 		return promotype;
 	}
 
+
+
 	public void setPromotype(PromoTypes promotype) {
 		this.promotype = promotype;
 	}
+
+
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cover_image == null) ? 0 : cover_image.hashCode());
+		result = prime * result + ((character == null) ? 0 : character.hashCode());
+		result = prime * result + ((characterName == null) ? 0 : characterName.hashCode());
+		result = prime * result + ((comic_link == null) ? 0 : comic_link.hashCode());
+		result = prime * result + ((creator == null) ? 0 : creator.hashCode());
+		result = prime * result + ((creatorName == null) ? 0 : creatorName.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
-		result = prime * result + ((image_link == null) ? 0 : image_link.hashCode());
+		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
 		result = prime * result + item_id;
-		result = prime * result + num_of_pages;
+		long temp;
+		temp = Double.doubleToLongBits(price);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((promotype == null) ? 0 : promotype.hashCode());
 		result = prime * result + qty_at_seller;
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
-		result = prime * result + ((title_link == null) ? 0 : title_link.hashCode());
 		result = prime * result + year_published;
 		return result;
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -226,24 +293,44 @@ public class Items {
 		if (getClass() != obj.getClass())
 			return false;
 		Items other = (Items) obj;
-		if (cover_image == null) {
-			if (other.cover_image != null)
+		if (character == null) {
+			if (other.character != null)
 				return false;
-		} else if (!cover_image.equals(other.cover_image))
+		} else if (!character.equals(other.character))
+			return false;
+		if (characterName == null) {
+			if (other.characterName != null)
+				return false;
+		} else if (!characterName.equals(other.characterName))
+			return false;
+		if (comic_link == null) {
+			if (other.comic_link != null)
+				return false;
+		} else if (!comic_link.equals(other.comic_link))
+			return false;
+		if (creator == null) {
+			if (other.creator != null)
+				return false;
+		} else if (!creator.equals(other.creator))
+			return false;
+		if (creatorName == null) {
+			if (other.creatorName != null)
+				return false;
+		} else if (!creatorName.equals(other.creatorName))
 			return false;
 		if (description == null) {
 			if (other.description != null)
 				return false;
 		} else if (!description.equals(other.description))
 			return false;
-		if (image_link == null) {
-			if (other.image_link != null)
+		if (genre == null) {
+			if (other.genre != null)
 				return false;
-		} else if (!image_link.equals(other.image_link))
+		} else if (!genre.equals(other.genre))
 			return false;
 		if (item_id != other.item_id)
 			return false;
-		if (num_of_pages != other.num_of_pages)
+		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
 			return false;
 		if (promotype == null) {
 			if (other.promotype != null)
@@ -257,16 +344,17 @@ public class Items {
 				return false;
 		} else if (!title.equals(other.title))
 			return false;
-		if (title_link == null) {
-			if (other.title_link != null)
-				return false;
-		} else if (!title_link.equals(other.title_link))
-			return false;
 		if (year_published != other.year_published)
 			return false;
 		return true;
 	}
 	
+	
+	
+	
+	
+	
+
 	
 
 }

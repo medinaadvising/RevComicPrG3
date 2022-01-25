@@ -31,7 +31,7 @@ public class TransactionsDAO {
 		
 		Session ses = HibernateUtil.getSession();
 		
-		List<Transactions> transList = ses.createQuery("FROM transactions").list();
+		List<Transactions> transList = ses.createQuery("FROM Transactions").list();
 		
 		HibernateUtil.closeSession();
 		

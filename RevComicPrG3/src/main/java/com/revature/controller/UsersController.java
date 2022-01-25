@@ -60,14 +60,14 @@ public class UsersController {
 			Gson gson = new Gson();
 			
 			
-			String JSONEmployees = gson.toJson(UsersById);
+			String JSONUsers = gson.toJson(UsersById);
 			
 			
-			ctx.result(JSONEmployees);
+			ctx.result(JSONUsers);
 			ctx.status(200);
 			
 		} else {
-			ctx.result("Oh no you failed to get the employees!!!");
+			ctx.result("Oh no you failed to get the user!!!");
 			ctx.status(404);
 		}
 	};
@@ -88,14 +88,14 @@ public class UsersController {
 			
 			User UpdateUser = us.updateUser(user);
 			
-			String JSONEmployees = gson.toJson(UpdateUser);
+			String JSONUsers = gson.toJson(UpdateUser);
 			
 			
-			ctx.result(JSONEmployees);
+			ctx.result(JSONUsers);
 			ctx.status(200);
 			
 		} else {
-			ctx.result("Oh no you failed to update the employee!!!");
+			ctx.result("Oh no you failed to update the user!!!");
 			ctx.status(404);
 		}
 	};

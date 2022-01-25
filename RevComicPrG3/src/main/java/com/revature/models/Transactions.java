@@ -21,6 +21,7 @@ public class Transactions {
 		private String purchase_date;
 		private String description;
 		private String receipt;
+	
 		
 		
 		@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

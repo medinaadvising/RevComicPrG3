@@ -78,14 +78,14 @@ TransactionsService ts = new TransactionsService();
 	public Handler getTransactionsByIdHandler = (ctx) -> {
 		if(ctx.req.getSession(true) !=null) {
 			
-			int trans_user = Integer.parseInt(ctx.pathParam("trans_user"));
+			int users_id = Integer.parseInt(ctx.pathParam("users_id"));
 			
-			List<Transactions> TransById = ts.getTransactions();
+			List<Transactions> TransByUser = ts.getTransactions();
 			
 			Gson gson = new Gson();
 			
 			
-			String JSONTransactions = gson.toJson(TransById);
+			String JSONTransactions = gson.toJson(TransByUser);
 			
 			
 			ctx.result(JSONTransactions);

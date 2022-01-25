@@ -6,10 +6,10 @@ import org.hibernate.Session;
 import com.revature.utils.HibernateUtil;
 
 import com.revature.controller.AuthController;
+import com.revature.controller.CreatorController;
+import com.revature.controller.ItemController;
 import com.revature.controller.TransactionsController;
 import com.revature.controller.UsersController;
-import com.revature.repositories.UserDAO;
-
 import io.javalin.Javalin;
 
 public class Driver {
@@ -21,6 +21,8 @@ public class Driver {
 		    	UsersController usc = new UsersController();
 		    	TransactionsController tc = new TransactionsController();
 		    	AuthController ac = new AuthController();
+		    	ItemController ic = new ItemController();
+		    	CreatorController cc = new CreatorController();
 		    	
 				
 				/*
@@ -44,11 +46,23 @@ public class Driver {
 				app.get("/user/{users_id}", usc.getUsersByIdHandler);
 				app.put("/user/{users_id}", usc.updateUsersHandler);
 				
-				//this can be where we add the marvel api functionality
+				
 				app.get("/transaction",  tc.getTransactionsHandler);
 				app.post("/transaction", tc.insertTransactionsHandler);
-				app.get("/transaction/{trans_user}", tc.getTransactionsByIdHandler);
+				app.get("/transaction/{users_id}", tc.getTransactionsByIdHandler);
 				app.put("/transaction/{trans_id}", tc.updateTransactionsHandler);
+				
+				app.get("/items",  ic.getItemsHandler);
+				app.post("/items", ic.insertItemHandler);
+				app.get("/items/{item_id}", ic.getItemsByIdHandler);
+				app.get("/items/creator/{creator_id}", ic.getItemsByCreatorIdHandler);
+				app.get("/items/creator/{creatorName}", ic.getItemsByCreatorHandler);
+				app.put("/items/{item_id}", ic.updateItemsHandler);
+				
+				app.get("/creators",  cc.getCreatorsHandler);
+				app.post("/creators", cc.insertCreatorHandler);
+				app.get("/creators/{creator_id}", cc.getCreatorsByIdHandler);
+				app.put("/creators/{creator_id}", cc.updateCreatorsHandler);
 				
 			}
 

@@ -13,14 +13,15 @@ public class Status {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int status_id;
-	private String in_cart;
-	private String purchased;
+	private String status;
+	
 	
 	
 	@Override
 	public String toString() {
-		return "Status [status_id=" + status_id + ", in_cart=" + in_cart + ", purchased=" + purchased + "]";
+		return "Status [status_id=" + status_id + ", status=" + status + "]";
 	}
+
 
 
 	public Status() {
@@ -29,12 +30,13 @@ public class Status {
 	}
 
 
-	public Status(int status_id, String in_cart, String purchased) {
+
+	public Status(int status_id, String status) {
 		super();
 		this.status_id = status_id;
-		this.in_cart = in_cart;
-		this.purchased = purchased;
+		this.status = status;
 	}
+
 
 
 	public int getStatus_id() {
@@ -42,40 +44,34 @@ public class Status {
 	}
 
 
+
 	public void setStatus_id(int status_id) {
 		this.status_id = status_id;
 	}
 
 
-	public String getIn_cart() {
-		return in_cart;
+
+	public String getStatus() {
+		return status;
 	}
 
 
-	public void setIn_cart(String in_cart) {
-		this.in_cart = in_cart;
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
-
-	public String getPurchased() {
-		return purchased;
-	}
-
-
-	public void setPurchased(String purchased) {
-		this.purchased = purchased;
-	}
 
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((in_cart == null) ? 0 : in_cart.hashCode());
-		result = prime * result + ((purchased == null) ? 0 : purchased.hashCode());
+		result = prime * result + ((status == null) ? 0 : status.hashCode());
 		result = prime * result + status_id;
 		return result;
 	}
+
 
 
 	@Override
@@ -87,15 +83,10 @@ public class Status {
 		if (getClass() != obj.getClass())
 			return false;
 		Status other = (Status) obj;
-		if (in_cart == null) {
-			if (other.in_cart != null)
+		if (status == null) {
+			if (other.status != null)
 				return false;
-		} else if (!in_cart.equals(other.in_cart))
-			return false;
-		if (purchased == null) {
-			if (other.purchased != null)
-				return false;
-		} else if (!purchased.equals(other.purchased))
+		} else if (!status.equals(other.status))
 			return false;
 		if (status_id != other.status_id)
 			return false;
@@ -103,5 +94,5 @@ public class Status {
 	}
 	
 	
-
+	
 }
