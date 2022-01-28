@@ -6,7 +6,7 @@ Introduction
 The E-CommicBookStore will manage buying or selling of comic books over the internet, and the transfer of data to execute the transactions. All users can log into the online comic bookstore by role (customer or store worker). New customers can register. Customers can search books by creator, genre, and character. Customers can also place order and checkout. Store workers can check inventories and add new products.
 
 E-Commerce System Use Case Diagram
-![](https://github.com/tjhodge121/RevComicPrG3/blob/main/diagram.png?raw=true)
+![](https://https://github.com/tjhodge121/RevComicPrG3/blob/main/diagram.png?raw=true)
 
 Technologies
 
