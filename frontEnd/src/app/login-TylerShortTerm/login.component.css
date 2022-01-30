@@ -1,0 +1,23 @@
+table{
+    background-color: rgb(12.5, 12.5, 12.5); 
+    border-collapse: collapse;
+    margin: 6px;
+}
+button {
+    background-color: rgb(25, 25, 25);
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    text-shadow: 2px 2px rgb(50, 50, 50);
+}
+.loginBanner{
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    border-radius: 8px;
+    text-shadow: 2px 2px rgb(50, 50, 50);
+}
