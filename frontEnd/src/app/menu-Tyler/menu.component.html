@@ -2,12 +2,13 @@
 <table class="table table-sm table-dark">
         <thead>
             <tr>
-                <td> <button id="menuLogin" class="menuButton"><h3>Login</h3></button></td>
-                <td><button id="menuInv" class="menuButton"><h3>Browse Inventory</h3></button></td>
-                <td><button id="menuCart" class="menuButton"><h3>Check Cart</h3></button></td>
-                <td><button id="menuCheckout" class="menuButton"> <h3>Checkout</h3></button></td>
-                <td><button id="menuCheckout" class="menuUserPf"> <h3>User Profile</h3></button></td>
+                <td><a routerLink = "login"> <button id="menuLogin" class="menuButton"><h3>Login</h3></button></a></td>
+                <td><a routerLink = "menuButton"><button id="menuInv" class="menuButton"><h3>Browse Inventory</h3></button></a></td>
+                <td><a routerLink = "cart"><button id="menuCart" class="menuButton" routerLink="Cart"><h3>Check Cart</h3></button></a></td>
+                <td><a routerLink = "checkout"><button id="menuCheckout" class="menuButton"> <h3>Checkout</h3></button></a></td>
+                <td><a routerLink = "userprofile"><button id="menuCheckout" class="menuUserPf"> <h3>User Profile</h3></button></a></td>
             </tr>
         </thead>
+        <router-outlet></router-outlet>
     </table>
     <thead>
