@@ -98,12 +98,42 @@ public class ItemController {
 			ctx.status(404);
 		}
 	};
+
+
+
+
+
+	
+	public Handler getItemsByTitleHandler = (ctx) -> {
+		if(ctx.req.getSession(true) !=null) {
+			
+			String title = ctx.pathParam("title");
+			
+			
+			List<Items> ItemsByTitle = is.getItemByTitle(title);
+			
+			Gson gson = new Gson();
+			
+			
+			String JSONItems = gson.toJson(ItemsByTitle);
+			
+			
+			ctx.result(JSONItems);
+			ctx.status(200);
+			
+		} else {
+			ctx.result("Oh no you failed to get the items!!!");
+			ctx.status(404);
+		}
+	};
 	
 	public Handler getItemsByCreatorHandler = (ctx) -> {
 		if(ctx.req.getSession(true) !=null) {
 			
+			String creator = ctx.pathParam("creatorName");
 			
-			List<Items> ItemsByCreator = is.getItemByCreator(null);
+			
+			List<Items> ItemsByCreator = is.getItemsByCreator(creator);
 			
 			Gson gson = new Gson();
 			
@@ -120,17 +150,18 @@ public class ItemController {
 		}
 	};
 	
-	public Handler getItemsByCreatorIdHandler = (ctx) -> {
+	public Handler getItemsByCharacterHandler = (ctx) -> {
 		if(ctx.req.getSession(true) !=null) {
 			
-			int creator_id = Integer.parseInt(ctx.pathParam("creator_id"));
+			String character = ctx.pathParam("characterName");
 			
-			List<Items> ItemsByCreatorId = is.getItemsByCreatorId(creator_id);
+			
+			List<Items> ItemsByCharacter = is.getItemsByCharacter(character);
 			
 			Gson gson = new Gson();
 			
 			
-			String JSONItems = gson.toJson(ItemsByCreatorId);
+			String JSONItems = gson.toJson(ItemsByCharacter);
 			
 			
 			ctx.result(JSONItems);

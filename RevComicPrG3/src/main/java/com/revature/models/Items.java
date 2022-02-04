@@ -28,6 +28,7 @@ public class Items {
 	private double price;
 	private int qty_at_seller;
 	
+	
 	//One to Many (technically many to one) relationship with Director - one Director can have many movies 
 	//We need to make this a foreign key to the Director table
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

@@ -49,14 +49,15 @@ public class Driver {
 				
 				app.get("/transaction",  tc.getTransactionsHandler);
 				app.post("/transaction", tc.insertTransactionsHandler);
-				app.get("/transaction/{users_id}", tc.getTransactionsByIdHandler);
+				app.get("/user_profile/{users_id}", tc.getTransactionsByUserIdHandler);
 				app.put("/transaction/{trans_id}", tc.updateTransactionsHandler);
 				
 				app.get("/items",  ic.getItemsHandler);
 				app.post("/items", ic.insertItemHandler);
 				app.get("/items/{item_id}", ic.getItemsByIdHandler);
-				app.get("/items/creator/{creator_id}", ic.getItemsByCreatorIdHandler);
-				app.get("/items/creator/{creatorName}", ic.getItemsByCreatorHandler);
+				app.get("/creator/{creatorName}", ic.getItemsByCreatorHandler);
+				app.get("/title/{title}", ic.getItemsByTitleHandler);
+				app.get("/character/{characterName}", ic.getItemsByCharacterHandler);
 				app.put("/items/{item_id}", ic.updateItemsHandler);
 				
 				app.get("/creators",  cc.getCreatorsHandler);

@@ -37,5 +37,12 @@ public class TransactionsService {
 		
 		return transById;
 	}
+	
+	public List<Transactions> getTransactionsByUserId(int id) {
+		
+		List<Transactions> transById= tDAO.getTransactionsByUserId(id);
+		
+		return transById;
+	}
 
 }
