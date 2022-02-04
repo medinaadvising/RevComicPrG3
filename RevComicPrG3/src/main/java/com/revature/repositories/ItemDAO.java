@@ -67,15 +67,15 @@ public List<Items> getAllItems(){
 	
 }
 	
-	public List<Items> getItemsByCreator(String creator){
+	public List<Items> getItemsByTitle(String title){
 		
 		Session ses = HibernateUtil.getSession();
 		
 		//Create a query with a parameter that takes in the director id (the id given in the method's parameters)
-		Query q = ses.createQuery("FROM Items WHERE Items.creatorName = ?0");
+		Query q = ses.createQuery("FROM Items i WHERE i.title = :title");
 		
 		//set the ? to the id sent in to the method call
-		q.setParameter(0, creator);
+		q.setParameter("title", title);
 		
 		//create a List to hold the results of the query
 		List<Items> itemsList = q.getResultList();
@@ -86,15 +86,15 @@ public List<Items> getAllItems(){
 		
 	}
 	
-	public List<Items> getItemsByCreatorId(int id){
+	public List<Items> getItemsByCreator(String creatorName){
 		
 		Session ses = HibernateUtil.getSession();
 		
 		//Create a query with a parameter that takes in the director id (the id given in the method's parameters)
-		Query q = ses.createQuery("FROM Items WHERE Items.creator_id = ?0");
+		Query q = ses.createQuery("FROM Items i WHERE i.creatorName = :creatorName");
 		
 		//set the ? to the id sent in to the method call
-		q.setParameter(0, id);
+		q.setParameter("creatorName", creatorName);
 		
 		//create a List to hold the results of the query
 		List<Items> itemList = q.getResultList();
@@ -105,5 +105,23 @@ public List<Items> getAllItems(){
 		
 	}
 
+	public List<Items> getItemsByCharacter(String characterName){
+		
+		Session ses = HibernateUtil.getSession();
+		
+		//Create a query with a parameter that takes in the director id (the id given in the method's parameters)
+		Query q = ses.createQuery("FROM Items i WHERE i.characterName = :characterName");
+		
+		//set the ? to the id sent in to the method call
+		q.setParameter("characterName", characterName);
+		
+		//create a List to hold the results of the query
+		List<Items> itemList = q.getResultList();
+		
+		HibernateUtil.closeSession();
+		
+		return itemList;
+		
+	}
 
 }

@@ -75,12 +75,12 @@ TransactionsService ts = new TransactionsService();
 		}
 	};
 	
-	public Handler getTransactionsByIdHandler = (ctx) -> {
+	public Handler getTransactionsByUserIdHandler = (ctx) -> {
 		if(ctx.req.getSession(true) !=null) {
 			
 			int users_id = Integer.parseInt(ctx.pathParam("users_id"));
 			
-			List<Transactions> TransByUser = ts.getTransactions();
+			List<Transactions> TransByUser = ts.getTransactionsByUserId(users_id);
 			
 			Gson gson = new Gson();
 			

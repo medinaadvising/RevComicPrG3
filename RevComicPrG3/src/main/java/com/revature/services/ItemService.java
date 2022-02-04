@@ -33,18 +33,25 @@ public class ItemService {
 		
 	}
 	
-	public List<Items> getItemByCreator(String creator) {
+	public List<Items> getItemByTitle(String title) {
 		
-		List<Items> items = iDAO.getItemsByCreator(creator);
+		List<Items> items = iDAO.getItemsByTitle(title);
 		
 		return items;
 	}
 	
-	public List<Items> getItemsByCreatorId(int id) {
+	public List<Items> getItemsByCreator(String creatorName) {
 		
-		List<Items> itemsByCreatorId= iDAO.getItemsByCreatorId(id);
+		List<Items> itemsByCreator= iDAO.getItemsByCreator(creatorName);
 		
-		return itemsByCreatorId;
+		return itemsByCreator;
+	}
+	
+	public List<Items> getItemsByCharacter(String characterName) {
+		
+		List<Items> itemsByCharacter= iDAO.getItemsByCharacter(characterName);
+		
+		return itemsByCharacter;
 	}
 
 }
