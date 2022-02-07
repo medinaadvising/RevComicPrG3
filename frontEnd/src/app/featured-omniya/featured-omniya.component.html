@@ -1,1 +1,78 @@
-<p>featured-omniya works!</p>
+
+<h1> Search For Featured Titles!</h1>
+
+<div class=" container-fluid">
+
+    <div class="row" style="margin: 0.5em;">
+    
+        <!-- as seen on ben's demo, I will be two way binding 
+            this input feild to a variable called input in featured-omniya.components.td  -->
+    
+            <input class = "col-lg-g-3 "type="letters"[(ngModel)]="input"/>
+    
+            <button class= "btn btn-dark"(click)="getFeaturedTitile()"> search </button>
+            <br> 
+    </div>
+    
+    <table class="table .table-dark" *ngIf="Features" > 
+    
+    <thead class="Thread-dark">
+      <br> 
+      <br>
+      <br>
+      <br>
+      <h1>Featured Movies  </h1>
+    <th scope="col-lg-1">Antman  <img src="../../assets/antman_lob_crd_01.jpg"/></td> </th>
+    <th scope="col-lg-1">Blade <img src="../../assets/blade_lob_crd_01.jpg"/></td></th>
+    <th scope="col-lg-1">Fantastic Four<img src="../../assets/fantasticfour_lob_crd_01.jpg"/></td></th>
+    <th scope="col-lg-1">The Marvels <img src="../../assets/themarvels_lob_crd_01.jpg"/></td></th>
+ 
+    </thead>
+    
+ 
+    </table>
+    </div>
+    
+ 
+        
+      
+            
+      
+        <table class="table .table-dark" *ngIf="Features" > 
+        
+        <thead class="Thread-dark">
+          <br> 
+          <br>
+          <br>
+          <br>
+          
+          <h1>Featured Comics  </h1>
+        <th scope="col-lg-1">Daredevil <img src="../../assets/Daredevil.jpg"/></td> </th>
+        <th scope="col-lg-1">Spider-Woman <img src="../../assets/Spider-Woman.jpg"/></td></th>
+        <th scope="col-lg-1"> Spider-Man <img src="../../assets/Savage Spider-Man.jpg"/></td></th>
+        <th scope="col-lg-1">Fantastic Four <img src="../../assets/Fantastic Four.jpg"/></td></th>
+     
+        </thead>
+        
+     
+        </table>
+        </div>
+        <table class="table .table-dark" *ngIf="Features" > 
+        
+            <thead class="Thread-dark">
+              <br> 
+              <br>
+              <br>
+              <br>
+              
+              <h1>Featured Games  </h1>
+            <th scope="col-lg-1">Midnight Suns <img src="../../assets/Game 1 midnightsons_lob_crd_02.jpg"/></td> </th>
+            <th scope="col-lg-1">Gaurdians of the Galaxy <img src="../../assets/Game 2 marvelsguardiansofthegalaxy_lob_crd_02.jpg"/></td></th>
+            <th scope="col-lg-1">Future Revolution <img src="../../assets/Game 3.jpg"/></td></th>
+            <th scope="col-lg-1">Avengers <img src="../../assets/Game 4.jpg"/></td></th>
+         
+            </thead>
+            
+         
+            </table>
+            </div>

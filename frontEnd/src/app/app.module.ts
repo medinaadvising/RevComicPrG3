@@ -15,6 +15,9 @@ import { StockroomComponent } from './stockroom/stockroom.component';
 import { UserProfileComponent } from './user-profile-Erling/user-profile.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchResultsComponent } from './search-results/search-results.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,11 +35,14 @@ import { SearchResultsComponent } from './search-results/search-results.componen
     UserProfileComponent,
     SearchBarComponent,
     SearchResultsComponent,
+    NavbarComponent,
 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule // we need this to acheive two way binding 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import com.revature.models.Users;
+
 // from jose 220123
 
 //package com.revature.services;
@@ -21,5 +23,12 @@ public class AuthService {
 //		
 //	}
 //
+
+public Users register(Users userToBeRegistered) {
+    return null;
 }
 
+public Users login(String username, String password) {
+    return null;
+}
+}
