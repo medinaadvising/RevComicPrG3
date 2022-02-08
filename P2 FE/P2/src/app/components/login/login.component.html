@@ -1,0 +1,29 @@
+<section class="user_details">
+  <h2>Please Login Below</h2>
+  <form #loginUserForm="ngForm" (submit)="addLogin(loginUserForm)">
+
+    <label for="Username">Username:</label>
+    <input class="form-input" type="text" id="username" [(ngModel)]="username" name="username"
+      placeholder="Enter username"><br>
+
+    <label for="Password">Password:</label>
+    <input class="form-input" type="password" id="password" [(ngModel)]="password" name="password"
+      placeholder="Enter password"><br>
+
+    <div id="login">
+      
+      <div *ngIf="login; else loggedOut">
+        <label class="mr-2">Login Successful!!</label>
+      </div>
+      <ng-template #loggedOut>
+        <div>
+          <button type="submit" id="loginButton" class="button" [disabled]="!loginUserForm.valid"
+            (click)="login = !login">Login</button>
+          <button id="resetButton" class="button" routerLink="resetpassword">Forgot Password</button>
+        </div>
+      </ng-template>
+
+    </div>
+
+  </form>
+</section>

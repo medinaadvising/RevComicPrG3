@@ -1,0 +1,37 @@
+<section class="user_details">
+  <h2>Please Enter Your Information Below</h2>
+
+  <form #addNewUserForm="ngForm" (submit)="addUser(addNewUserForm)">
+
+    <label for="Username">Username:</label>
+    <input class="form-input" type="text" id="username" [(ngModel)]="username" name="username" required ngModel
+      placeholder="Create username"><br>
+
+    <label for="Password">Password:</label>
+    <input class="form-input" type="password" id="password" [(ngModel)]="password" name="password" required ngModel
+      placeholder="Create password"><br>
+
+
+    <label for="F_name">First Name:</label>
+    <input class="form-input" type="text" id="f_name" [(ngModel)]="f_name" name="f_name" required ngModel
+      placeholder="First Name"><br>
+
+
+    <label for="L_name">Last Name:</label>
+    <input class="form-input" type="text" id="l_name" [(ngModel)]="l_name" name="l_name" required ngModel
+      placeholder="Last Name"><br>
+
+
+    <label for="User_email">Email:</label>
+    <input class="form-input" type="email" id="user_email" [(ngModel)]="user_email" name="user_email" required ngModel
+      placeholder="Email"><br>
+
+
+    <div id="register">
+    <button type="submit" id="registerButton" class="button" [disabled]="!addNewUserForm.valid">Register</button>    
+    </div>
+    
+
+    <div *ngIf="add">Registration Successful! </div>
+  </form>
+</section>

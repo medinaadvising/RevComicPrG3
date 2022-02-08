@@ -1,0 +1,50 @@
+<section class="user_details">
+    <h2>Checkout Below</h2>
+  
+    <form #addNewCheckoutForm="ngForm" (submit)="addUser(addNewCheckoutForm)">
+  
+      <label for="Quantity">Quantity:</label>
+      <input class="form-input" type="text" id="quantity" [(ngModel)]="quantity" name="quantity" required ngModel
+        placeholder="Quantity"><br>
+  
+      <label for="Total">Total:</label>
+      <input class="form-input" type="text" id="total" [(ngModel)]="total" name="total" required ngModel
+        placeholder="Enter Total"><br>
+  
+  
+      <label for="F_name">First Name:</label>
+      <input class="form-input" type="text" id="f_name" [(ngModel)]="f_name" name="f_name" required ngModel
+        placeholder="First Name"><br>
+  
+  
+      <label for="L_name">Last Name:</label>
+      <input class="form-input" type="text" id="l_name" [(ngModel)]="l_name" name="l_name" required ngModel
+        placeholder="Last Name"><br>
+  
+  
+      <label for="Credit_card">Credit Card:</label>
+      <input class="form-input" type="text" id="credit_card" [(ngModel)]="credit_card" name="credit_card" required ngModel
+        placeholder="Enter Card Number"><br>
+        
+        <label for="Expiration">Expiration:</label>
+      <input class="form-input" type="text" id="expiration" [(ngModel)]="expiration" name="expiration" required ngModel
+        placeholder="MM/YY Card Expiration"><br>
+
+        <label for="Cvv">CVV Code:</label>
+      <input class="form-input" type="text" id="cvv" [(ngModel)]="cvv" name="cvv" required ngModel
+        placeholder="Security Code"><br>
+
+        <label for="Zipcode">Billing Zipcode:</label>
+      <input class="form-input" type="text" id="zipcode" [(ngModel)]="zipcode" name="zipcode" required ngModel
+        placeholder="Billing Zipcode"><br>
+  
+      <div id="checkout">
+      <button type="submit" id="checkoutButton" class="button" [disabled]="!addNewCheckoutForm.valid">Checkout</button>    
+      </div>
+      
+  
+      <div *ngIf="trans">Checkout Successful! </div>
+    </form>
+    
+  </section>
+  
