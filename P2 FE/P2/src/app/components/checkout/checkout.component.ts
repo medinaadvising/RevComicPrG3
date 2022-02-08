@@ -1,3 +1,4 @@
+import { CartService } from './../../Service/cart.service';
 import { TransactionService } from './../../Service/transaction.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -9,6 +10,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+
+  public item : any = [];
+  public grandTotal !: number;
 
   quantity:number = null;
   total:string = '';
@@ -24,10 +28,15 @@ export class CheckoutComponent implements OnInit {
   trans = false;
 
 
-  constructor(private ts:TransactionService) { }
+  constructor(private ts:TransactionService, private cs: CartService) { }
 
   ngOnInit(): void {
-  }
+    this.cs.getProducts()
+    .subscribe(res=>{
+      this.item = res;
+      this.grandTotal = this.cs.getTotalPrice();
+  })
+}
 
   addUser(form: NgForm){
     
@@ -52,6 +61,13 @@ export class CheckoutComponent implements OnInit {
       console.log("Transaction Failed" + err);
     });
       
+  }
+
+  removeItem(item: any){
+    this.cs.removeCartItem(item);
+  }
+  emptycart(){
+    this.cs.removeAllCart();
   }
 
 }

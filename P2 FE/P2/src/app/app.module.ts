@@ -17,6 +17,7 @@ import { DisplayproductsComponent } from './components/displayproducts/displaypr
 import { SearchComponent } from './components/search/search.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
+import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     ComicsComponent,
     SearchComponent,
-    AddItemComponent
+    AddItemComponent,
+    ThemeToggleComponent
   ],
   imports: [
     BrowserModule,

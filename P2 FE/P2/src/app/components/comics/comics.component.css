@@ -120,16 +120,12 @@
       text-align: center;
     }
   
-    tr {
-      background-color: #FFF;
-    }
+    
   
     table{
       width: 100%;  }
   
-    tr:hover {
-      background-color:lavender;
-    }  
+      
 
     img{
       height: 250px

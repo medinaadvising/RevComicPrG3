@@ -1,3 +1,4 @@
+import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
 {path: 'cart', component:CartComponent},
 {path: 'checkout', component:CheckoutComponent},
 {path: 'search', component:SearchComponent},
-{path: 'add', component:AddItemComponent}
+{path: 'add', component:AddItemComponent},
+{path: 'dark', component:ThemeToggleComponent}
 
 ];
 

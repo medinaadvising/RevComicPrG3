@@ -82,3 +82,20 @@
     #checkout{
         padding-left: 250px;
     }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+  
+    th{
+      background-color: #EC1D24;
+      color: white;
+      text-align: center;
+    }
+  
+    table{
+      width: 100%;  }
+
+    img{
+      height: 250px
+    }
