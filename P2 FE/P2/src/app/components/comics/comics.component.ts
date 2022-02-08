@@ -23,13 +23,17 @@ export class ComicsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.is.allItems().subscribe((result) =>{
+    this.is.allItems().subscribe(result =>{
 
       console.log(result);
 
       this.allItems = result;
 
       console.log(this.allItems)
+      this.allItems.forEach((item:any) => {
+        
+        Object.assign(item,{quantity:item.quantity,total:item.price});
+      });
 
   })
 }
