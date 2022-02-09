@@ -19,6 +19,7 @@ public class Items {
 	@Id //This will make the field a primary key
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //this makes our PK serial
 	private int item_id;
+	private String image;
 	private String title;
 	private String description;
 	private String comic_link;
@@ -66,29 +67,18 @@ public class Items {
 	//original DB table name: promo_types. See Java class PromoType
 	
 	
-
-	@Override
-	public String toString() {
-		return "Items [item_id=" + item_id + ", title=" + title + ", description=" + description + ", comic_link="
-				+ comic_link + ", creatorName=" + creatorName + ", characterName=" + characterName + ", year_published="
-				+ year_published + ", price=" + price + ", qty_at_seller=" + qty_at_seller + ", creator=" + creator
-				+ ", genre=" + genre + ", character=" + character + ", promotype=" + promotype + "]";
-	}
-
-
+	
 
 	public Items() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-
-
-	public Items(int item_id, String title, String description, String comic_link, String creatorName,
+	public Items(int item_id, String image, String title, String description, String comic_link, String creatorName,
 			String characterName, int year_published, double price, int qty_at_seller, Creators creator, Genres genre,
 			Characters character, PromoTypes promotype) {
 		super();
 		this.item_id = item_id;
+		this.image = image;
 		this.title = title;
 		this.description = description;
 		this.comic_link = comic_link;
@@ -102,165 +92,116 @@ public class Items {
 		this.character = character;
 		this.promotype = promotype;
 	}
-
-
-
+	public Items(String image, String title, String description, String comic_link, String creatorName,
+			String characterName, int year_published, double price, int qty_at_seller, Creators creator, Genres genre,
+			Characters character, PromoTypes promotype) {
+		super();
+		this.image = image;
+		this.title = title;
+		this.description = description;
+		this.comic_link = comic_link;
+		this.creatorName = creatorName;
+		this.characterName = characterName;
+		this.year_published = year_published;
+		this.price = price;
+		this.qty_at_seller = qty_at_seller;
+		this.creator = creator;
+		this.genre = genre;
+		this.character = character;
+		this.promotype = promotype;
+	}
+	@Override
+	public String toString() {
+		return "Items [item_id=" + item_id + ", image=" + image + ", title=" + title + ", description=" + description
+				+ ", comic_link=" + comic_link + ", creatorName=" + creatorName + ", characterName=" + characterName
+				+ ", year_published=" + year_published + ", price=" + price + ", qty_at_seller=" + qty_at_seller
+				+ ", creator=" + creator + ", genre=" + genre + ", character=" + character + ", promotype=" + promotype
+				+ "]";
+	}
 	public int getItem_id() {
 		return item_id;
 	}
-
-
-
 	public void setItem_id(int item_id) {
 		this.item_id = item_id;
 	}
-
-
-
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
 	public String getTitle() {
 		return title;
 	}
-
-
-
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-
-
 	public String getDescription() {
 		return description;
 	}
-
-
-
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-
-
 	public String getComic_link() {
 		return comic_link;
 	}
-
-
-
 	public void setComic_link(String comic_link) {
 		this.comic_link = comic_link;
 	}
-
-
-
 	public String getCreatorName() {
 		return creatorName;
 	}
-
-
-
 	public void setCreatorName(String creatorName) {
 		this.creatorName = creatorName;
 	}
-
-
-
 	public String getCharacterName() {
 		return characterName;
 	}
-
-
-
 	public void setCharacterName(String characterName) {
 		this.characterName = characterName;
 	}
-
-
-
 	public int getYear_published() {
 		return year_published;
 	}
-
-
-
 	public void setYear_published(int year_published) {
 		this.year_published = year_published;
 	}
-
-
-
 	public double getPrice() {
 		return price;
 	}
-
-
-
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
-
-
 	public int getQty_at_seller() {
 		return qty_at_seller;
 	}
-
-
-
 	public void setQty_at_seller(int qty_at_seller) {
 		this.qty_at_seller = qty_at_seller;
 	}
-
-
-
 	public Creators getCreator() {
 		return creator;
 	}
-
-
-
 	public void setCreator(Creators creator) {
 		this.creator = creator;
 	}
-
-
-
 	public Genres getGenre() {
 		return genre;
 	}
-
-
-
 	public void setGenre(Genres genre) {
 		this.genre = genre;
 	}
-
-
-
 	public Characters getCharacter() {
 		return character;
 	}
-
-
-
 	public void setCharacter(Characters character) {
 		this.character = character;
 	}
-
-
-
 	public PromoTypes getPromotype() {
 		return promotype;
 	}
-
-
-
 	public void setPromotype(PromoTypes promotype) {
 		this.promotype = promotype;
 	}
-
-
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -272,6 +213,7 @@ public class Items {
 		result = prime * result + ((creatorName == null) ? 0 : creatorName.hashCode());
 		result = prime * result + ((description == null) ? 0 : description.hashCode());
 		result = prime * result + ((genre == null) ? 0 : genre.hashCode());
+		result = prime * result + ((image == null) ? 0 : image.hashCode());
 		result = prime * result + item_id;
 		long temp;
 		temp = Double.doubleToLongBits(price);
@@ -282,9 +224,6 @@ public class Items {
 		result = prime * result + year_published;
 		return result;
 	}
-
-
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -329,6 +268,11 @@ public class Items {
 				return false;
 		} else if (!genre.equals(other.genre))
 			return false;
+		if (image == null) {
+			if (other.image != null)
+				return false;
+		} else if (!image.equals(other.image))
+			return false;
 		if (item_id != other.item_id)
 			return false;
 		if (Double.doubleToLongBits(price) != Double.doubleToLongBits(other.price))
@@ -350,6 +294,8 @@ public class Items {
 		return true;
 	}
 	
+	
+
 	
 	
 	

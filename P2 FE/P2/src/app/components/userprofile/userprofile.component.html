@@ -1,0 +1,29 @@
+<div class="container-fluid">
+
+    <div class="row" style="padding-top: 15px; padding-left: 820px;">
+        <input style="margin-right: 10px;"class="col-lg-1" type="number" [(ngModel)] = "input">
+        <button class="btn btn-danger col-lg-1" (click) = "userProfile()">User ID</button>
+    </div>
+
+    <table style="margin-top: 25px;"class="table table-bordered" *ngIf="user">
+        <thead>
+            <th scope="col-lg-3">Username</th>
+            <th scope="col-lg-3">Password</th>
+            <th scope="col-lg-3">First Name</th>
+            <th scope="col-lg-3">Last Name</th>
+            <th scope="col-lg-3">User Email</th>
+        </thead>
+
+        <tbody style="text-align: center;">
+            <tr>
+                <td>{{user.username | titlecase}}</td>
+                <td>{{user.password | titlecase}}</td>
+                <td>{{user.f_name | titlecase}}</td>
+                <td>{{user.l_name | titlecase}}</td>
+                <td>{{user.user_email | titlecase}}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+</div>

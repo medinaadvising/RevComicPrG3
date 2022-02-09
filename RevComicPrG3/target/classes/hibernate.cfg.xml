@@ -10,7 +10,7 @@
      <!-- JDBC -->
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">password</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/postgres?currentSchema=p2</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://104.198.43.96:5432/postgres?currentSchema=p2</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <!-- Hibernate Properties -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
