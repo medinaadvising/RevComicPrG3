@@ -28,11 +28,11 @@ export class UserService {
     
   }
 
-  putUser(putData){
+  putUser(userForm){
     
     let id = (<HTMLInputElement>document.getElementById("{users_id}")).value;
 
-    return this.http.put(this.url +'/'+id, putData);
+    return this.http.put(this.url +'/'+id, userForm);
   }
 
 }

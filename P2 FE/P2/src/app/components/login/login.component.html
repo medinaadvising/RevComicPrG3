@@ -18,7 +18,7 @@
       <ng-template #loggedOut>
         <div>
           <button type="submit" id="loginButton" class="button" [disabled]="!loginUserForm.valid"
-            (click)="login = !login">Login</button>
+            (click)="login = !login" (click)="ngOnInit()" routerLink="/userprofile">Login</button>
           <button id="resetButton" class="button" routerLink="resetpassword">Forgot Password</button>
         </div>
       </ng-template>

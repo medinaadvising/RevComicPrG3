@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
   addUser(form: NgForm){
     
     const userForm = {
@@ -41,6 +42,7 @@ export class RegisterComponent implements OnInit {
     this.us.postUser(userForm).subscribe(data => {
       console.log(data)
       this.add = true;
+
     }, (err)=>{
       console.log("unable to add user" + err);
     });

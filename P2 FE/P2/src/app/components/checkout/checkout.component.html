@@ -4,12 +4,12 @@
     <form #addNewCheckoutForm="ngForm" (submit)="addUser(addNewCheckoutForm)">
   
       <label for="Quantity">Quantity:</label>
-      <input class="form-input" type="text" id="quantity" [(ngModel)]="quantity" name="quantity" required ngModel
-        placeholder="Quantity" value="{{item.quantity}}"><br>
+      <input class="form-input" type="text" id="quantity" [(ngModel)]="totalItem" name="quantity" required ngModel
+        placeholder="Quantity" ><br>
   
       <label for="Total">Total:</label>
-      <input class="form-input" type="text" id="total" [(ngModel)]="total" name="total" required ngModel
-        placeholder="Enter Total" value="{{item.grandTotal}}"><br>
+      <input class="form-input" type="text" id="total" [(ngModel)]="grandTotal" name="total" required ngModel
+        placeholder="Enter Total" ><br>
   
   
       <label for="F_name">First Name:</label>
@@ -39,7 +39,7 @@
         placeholder="Billing Zipcode"><br>
   
       <div id="checkout">
-      <button type="submit" id="checkoutButton" class="button" [disabled]="!addNewCheckoutForm.valid">Checkout</button>    
+      <button type="submit" id="checkoutButton" class="button" [disabled]="!addNewCheckoutForm.valid" (click)="ngOnInit()" routerLink="/thankyou">Checkout</button>    
       </div>
       
   

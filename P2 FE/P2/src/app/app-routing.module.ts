@@ -1,3 +1,4 @@
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { LoginComponent } from './components/login/login.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
 {path: 'checkout', component:CheckoutComponent},
 {path: 'search', component:SearchComponent},
 {path: 'add', component:AddItemComponent},
-{path: 'dark', component:ThemeToggleComponent}
+{path: 'dark', component:ThemeToggleComponent},
+{path: 'thankyou', component:ThankyouComponent}
 
 ];
 
