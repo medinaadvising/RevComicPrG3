@@ -13,6 +13,7 @@ export class CheckoutComponent implements OnInit {
 
   public item : any = [];
   public grandTotal !: number;
+  public totalItem : number = 0;
 
   quantity:number = null;
   total:string = '';
@@ -35,6 +36,11 @@ export class CheckoutComponent implements OnInit {
     .subscribe(res=>{
       this.item = res;
       this.grandTotal = this.cs.getTotalPrice();
+
+      this.cs.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
   })
 }
 

@@ -18,6 +18,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { FormsModule } from '@angular/forms';
 import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ThemeToggleComponent } from './components/theme-toggle/theme-toggle.com
     ComicsComponent,
     SearchComponent,
     AddItemComponent,
-    ThemeToggleComponent
+    ThemeToggleComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

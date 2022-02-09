@@ -28,7 +28,7 @@
 
 
     <div id="register">
-    <button type="submit" id="registerButton" class="button" [disabled]="!addNewUserForm.valid">Register</button>    
+    <button type="submit" id="registerButton" class="button" [disabled]="!addNewUserForm.valid" (click)="ngOnInit()" routerLink="">Register</button>    
     </div>
     
 
