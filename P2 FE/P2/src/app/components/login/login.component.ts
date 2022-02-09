@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
 
   login = false;
 
+  error:string = "Incorrect Credentials"
+
   constructor(private ls: LoginService) { }
 
   ngOnInit(): void {
@@ -41,6 +43,12 @@ export class LoginComponent implements OnInit {
       console.log("Login Failed" + err);
     });
       
+  }
+
+  checkLogin(){
+    if(this.username !== "medina" || this.password !== "password"){
+      this.error;
+    }
   }
 
 }

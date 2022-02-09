@@ -71,7 +71,7 @@ public class TransactionsDAO {
 		
 		Session ses = HibernateUtil.getSession();
 		
-		Query q = ses.createQuery("FROM Transactions t WHERE t.myuser = ?0");
+		Query q = ses.createQuery("FROM Transactions t WHERE t.myuser.users_id = ?0");
 		
 		//set the ? to the id sent in to the method call
 		q.setParameter(0, id);

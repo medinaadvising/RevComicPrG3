@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
   showComicsDiv:boolean;
   showSeriesDiv:boolean;
   characterName:string;
+  characterId:number;
+  creator:string;
   showSearchResult:boolean;
   searchedCharacter:any=[];
 
@@ -44,6 +46,40 @@ export class SearchComponent implements OnInit {
        }
      })
   }
+
+  findCharacterbyid(event:any){
+    this.characterId = event.target.value;
+    console.log(this.characterId);
+    this.service.getCharacterById(this.characterId).subscribe((result)=>{
+      console.log(result);
+      if(result.data.count>0)
+      {
+        this.showSearchResult = true;
+        this.searchedCharacter = result.data.results;
+      }
+      else{
+ 
+        this.ngOnInit();
+      }
+    })
+ }
+
+ findByCreator(event:any){
+  this.creator = event.target.value;
+  console.log(this.creator);
+  this.service.getByCreator(this.creator).subscribe((result)=>{
+    console.log(result);
+    if(result.data.count>0)
+    {
+      this.showSearchResult = true;
+      this.searchedCharacter = result.data.results;
+    }
+    else{
+
+      this.ngOnInit();
+    }
+  })
+}
   
     fetchComicsByCharacter(characterId:string){
       console.log(characterId);
