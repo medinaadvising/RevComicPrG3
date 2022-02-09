@@ -46,4 +46,18 @@ export class MarvelAPIService {
     return this.http.get(characterNameUrl);
   }
 
+  getCharacterById(characterId:number):Observable<any>
+  {
+  
+    const characterIdUrl = `https://gateway.marvel.com:443/v1/public/characters/${characterId}?&ts=1&apikey=09db8c0609e1acf77214f261ade15d8d&hash=321fb8d004021d2dc79ab68fa604faa5`;
+    return this.http.get(characterIdUrl);
+  }
+
+  getByCreator(creator:string):Observable<any>
+  {
+  
+    const creatorUrl = `https://gateway.marvel.com:443/v1/public/creators?name=${creator}&ts=1&apikey=09db8c0609e1acf77214f261ade15d8d&hash=321fb8d004021d2dc79ab68fa604faa5`;
+    return this.http.get(creatorUrl);
+  }
+
 }
