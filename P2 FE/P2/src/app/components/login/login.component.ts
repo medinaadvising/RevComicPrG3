@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   login = false;
 
-  error:string = "Incorrect Credentials"
+ 
 
   constructor(private ls: LoginService) { }
 
@@ -45,10 +45,6 @@ export class LoginComponent implements OnInit {
       
   }
 
-  checkLogin(){
-    if(this.username !== "medina" || this.password !== "password"){
-      this.error;
-    }
-  }
+ 
 
 }

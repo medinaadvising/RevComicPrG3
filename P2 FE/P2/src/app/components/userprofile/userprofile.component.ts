@@ -1,3 +1,4 @@
+import { CartService } from 'src/app/Service/cart.service';
 import { UserService } from 'src/app/Service/user.service';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
@@ -18,8 +19,12 @@ export class UserprofileComponent implements OnInit {
 
   userp = false;
 
+  public item : any = [];
+  public grandTotal !: number;
+  public totalItem : number = 0;
 
-  constructor(private up:UserService) { }
+
+  constructor(private up:UserService, private cs: CartService) { }
 
   ngOnInit(): void {
   }
@@ -40,7 +45,18 @@ export class UserprofileComponent implements OnInit {
     ()=>{
       console.log("unable to pull user profile");
     })
+
+    this.cs.getProducts()
+    .subscribe(res=>{
+      this.item = res;
+      this.grandTotal = this.cs.getTotalPrice();
+
+      this.cs.getProducts()
+    .subscribe(res=>{
+      this.totalItem = res.length;
+    })
       
-  }
+  })
+}
 
 }
