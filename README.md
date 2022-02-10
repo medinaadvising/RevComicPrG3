@@ -14,7 +14,7 @@
 <h1 align="center">Vanquish Comics</h1>
 
   <p align="center">
-    Vanquish Comics will manage the selling of digital comic books over the internet, and the transfer of data to execute the transactions. Customers can log into the online comic book store. New customers can register for an account. Customers can search comics by character and character ID. Customers add comics to cart and checkout. Inside the cart, a customer can add, remove item or empty cart. Customers can view current inventory and select comics to add into cart before purchasing. Each customer will have a user profile that will display their account information. There is also a reset password section that will allow customers to reset their password and update their information. Once a character is selected, customers can view featured comics based on the character. There is also a dark mode that can be toggled on and off.
+    Vanquish Comics will manage the selling of digital comic books over the internet, and the transfer of data to execute the transactions. Customers can log into the online comic book store. New customers can register for an account. Each customer will have a user profile that will display their account information. There is also a reset password section that will allow customers to reset their password and update their information. Customers can search comics by character and character ID. Once a character is selected, customers can view featured comics based on the character. Customers add comics to cart and checkout. Inside the cart, a customer can add, remove item or empty cart. Customers can view current inventory and select comics to add into cart before purchasing. There is also a dark mode that can be toggled on and off.
     <br />
  
 </div>
