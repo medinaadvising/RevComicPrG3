@@ -26,7 +26,8 @@ const routes: Routes = [
 {path: 'search', component:SearchComponent},
 {path: 'add', component:AddItemComponent},
 {path: 'dark', component:ThemeToggleComponent},
-{path: 'thankyou', component:ThankyouComponent}
+{path: 'thankyou', component:ThankyouComponent},
+{path: 'userprofile/resetpassword', component:ResetpasswordComponent}
 
 ];
 

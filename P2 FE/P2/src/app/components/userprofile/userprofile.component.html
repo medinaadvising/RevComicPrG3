@@ -3,6 +3,7 @@
     <div class="row" style="padding-top: 15px; padding-left: 820px;">
         <input style="margin-right: 10px;"class="col-lg-1" type="number" [(ngModel)] = "input">
         <button class="btn btn-danger col-lg-1" (click) = "userProfile()">User ID</button>
+        <button style="margin-left: 25px;"class="btn btn-danger col-lg-1" routerLink="resetpassword">Update</button>
     </div>
 
     <table style="margin-top: 25px;"class="table table-bordered" *ngIf="user">
